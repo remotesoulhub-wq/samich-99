@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:16
 WORKDIR /app
 
 # Set environment variables to reduce memory usage
@@ -17,6 +17,10 @@ COPY . .
 # Build with reduced memory
 RUN npm run build
 
+# Install serve globally to serve the static export
+RUN npm install -g serve
+
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# Serve the static export from the 'out' directory
+CMD ["serve", "-s", "out", "-l", "3000"]
