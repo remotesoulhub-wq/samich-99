@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 export default function About() {
   const ref = useRef(null);
@@ -34,16 +35,25 @@ export default function About() {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              With over a decade of experience in visual storytelling, I transform ideas into compelling narratives through video, 3D art, infographics, and photography.
+              I’m a visual artist focused on photography and videography, using light, motion, and storytelling to capture real moments with emotion and meaning.
             </motion.p>
 
+            <motion.p
+              className="text-lg text-white/70 mb-6 leading-relaxed"
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              My background in 3D graphics adds a cinematic edge to my work, but I’m most inspired by video creation and VFX. I enjoy collaborating with others and combining creative ideas to bring stories to life.
+            </motion.p>
+            
             <motion.p
               className="text-lg text-white/70 leading-relaxed"
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Every project is an opportunity to push creative boundaries and deliver work that resonates, inspires, and leaves a lasting impact.
+              Whether behind the camera or in post prod, I aim to create work that feels honest and impactful. Art is how I connect with people, with places, and with myself. It’s both my passion and my way of making sense of the world.
             </motion.p>
           </div>
 
@@ -70,15 +80,7 @@ export default function About() {
               transition={{ duration: 0.3 }}
             >
               <div className="text-center px-8">
-                <motion.div
-                  className="text-7xl font-bold mb-4"
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 0.8, type: 'spring' }}
-                >
-                  10+
-                </motion.div>
-                <div className="text-xl text-white/70">Years of Excellence</div>
+                <Image src="about-img.jpg" alt="About me illustration" width={340} height={320} />
               </div>
             </motion.div>
           </motion.div>

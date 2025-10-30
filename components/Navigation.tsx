@@ -43,7 +43,7 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            STUDIO
+            QLF Studio
           </motion.a>
 
           <div className="hidden md:flex items-center gap-8">

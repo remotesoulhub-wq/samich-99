@@ -69,14 +69,13 @@ export default function PortfolioModal({ isOpen, onClose, item }: PortfolioModal
             <div className="relative">
               {item.type === 'video' ? (
                 <div className="relative aspect-video bg-black rounded-2xl overflow-hidden">
-                  <video
+                  <iframe
                     className="w-full h-full"
-                    controls
-                    autoPlay
-                    src={item.videoUrl}
-                  >
-                    Your browser does not support the video tag.
-                  </video>
+                    src={item.videoUrl?.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/')}
+                    title={item.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
               ) : (
                 <motion.div
